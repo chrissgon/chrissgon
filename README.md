@@ -42,4 +42,4 @@ class Skills extends Developer {
 <br>
 
 <img width="325" src="https://github-readme-streak-stats.herokuapp.com?user=chrissgon&theme=dark&hide_border=true&background=1c1d24">
-<img width="273" src="https://github-readme-stats.vercel.app/api/top-langs/?username=chrissgon&layout=compact&hide_border=true&theme=dark&bg_color=1c1d24&langs_count=6&hide=jupyter%20notebook,tex,css,php">
+<img width="273" src="https://github-readme-stats.vercel.app/api/top-langs/?username=chrissgon&layout=compact&hide_border=true&theme=dark&bg_color=1c1d24&langs_count=6&hide=tex,php,vba,hack">
