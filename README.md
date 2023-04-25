@@ -9,7 +9,7 @@
 ### Hello everyone 👋
 My name is Christopher Gonçalves, I'm a Systems Analyst and UX/UI Designer. Passionate about technology, I started in the area at 14 years, where I am currently ❤️. <br>
 
-Today I seek to improve my knowledge in Vue, Golang, Devops and Cloud. <br><br>
+Today I seek to improve my knowledge in Vue, Golang, Devops and Cloud. <br>
 
 💻 Web Developer at [Mindbe](https://mindbe.com.br/) <br>
 📚 Studying Vue + Nuxt, Microservices, Clean Code, DDD, Design Patterns, Golang and AWS <br>
