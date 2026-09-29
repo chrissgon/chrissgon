@@ -1,0 +1,16 @@
+name: Pick the next post
+description: Pick the topic I write next. One pick per GitHub account per round.
+title: "pick: "
+labels: [pick]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The title says which topic you picked: A, B or C, as in the README. Submit as it is; a workflow counts your pick, replies and closes this issue.
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Your pick
+      options:
+        - label: I pick the topic in the title.
+          required: true

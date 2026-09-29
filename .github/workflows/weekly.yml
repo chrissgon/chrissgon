@@ -1,0 +1,26 @@
+name: weekly
+# Every Monday at 12:00 UTC (09:00 in São Paulo): measure the numbers, close the pick round, open the next queued one.
+on:
+  schedule:
+    - cron: "0 12 * * 1"
+  workflow_dispatch:
+permissions: {}
+concurrency:
+  group: readme
+  cancel-in-progress: false
+jobs:
+  weekly:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.repository.default_branch || 'master' }}
+          persist-credentials: false
+      - run: python3 -m unittest discover -s scripts -p "test_*.py"
+      - run: python3 scripts/readme.py weekly --apply
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          README_BRANCH: ${{ github.event.repository.default_branch || 'master' }}

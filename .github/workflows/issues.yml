@@ -1,0 +1,27 @@
+name: issues
+# Counts picks and records accepted problems. Issue text never reaches a shell command:
+# scripts/readme.py reads the event from GITHUB_EVENT_PATH.
+on:
+  issues:
+    types: [opened, labeled]
+permissions: {}
+concurrency:
+  group: readme
+  cancel-in-progress: false
+jobs:
+  handle:
+    if: github.event.issue.user.type != 'Bot'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+      issues: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.repository.default_branch || 'master' }}
+          persist-credentials: false
+      - run: python3 scripts/readme.py issue --event "$GITHUB_EVENT_PATH" --apply
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          README_BRANCH: ${{ github.event.repository.default_branch || 'master' }}

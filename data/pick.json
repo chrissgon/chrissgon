@@ -1,0 +1,13 @@
+{
+ "open": true,
+ "round": "2026-09-29",
+ "closes": "2026-10-05",
+ "pillar": "AI built in public",
+ "options": {
+  "A": "A cheap model obeyed a prompt injection. How a skill fixed it.",
+  "B": "LinkedIn's API won't let me read comments. What I did instead.",
+  "C": "Evals with and without a skill: the real numbers."
+ },
+ "picks": {},
+ "history": []
+}

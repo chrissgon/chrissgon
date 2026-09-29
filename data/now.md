@@ -1,0 +1,3 @@
+- Rebuilding my site on [chrissgon.dev](https://chrissgon.dev) with Perfect UI, readable by people and by AI agents.
+- Teaching an agent to answer comments on my posts, inside rules I approve.
+- Turning this page into something you can use: pick my next post, or tell me a problem.

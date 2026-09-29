@@ -21,35 +21,17 @@ This page isn't only about me. You can use it: pick what I write next, or tell m
 
 ## Now
 
-- Rebuilding my site on [chrissgon.dev](https://chrissgon.dev) with Perfect UI, readable by people and by AI agents.
-- Teaching an agent to answer comments on my posts, inside rules I approve.
-- Turning this page into something you can use: pick my next post, or tell me a problem.
+{{now}}
 
 ## Pick the next post
 
-This week's slot is **AI built in public**. Pick the topic I write next: one pick per GitHub account, and the round closes on 2026-10-05.
-
-<a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20A"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/pick-a-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/pick-a-light.svg">
-  <img alt="Pick A: A cheap model obeyed a prompt injection. How a skill fixed it. (0 so far)" src="assets/pick-a-dark.svg" width="100%">
-</picture></a>
-<a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20B"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/pick-b-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/pick-b-light.svg">
-  <img alt="Pick B: LinkedIn's API won't let me read comments. What I did instead. (0 so far)" src="assets/pick-b-dark.svg" width="100%">
-</picture></a>
-<a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20C"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/pick-c-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/pick-c-light.svg">
-  <img alt="Pick C: Evals with and without a skill: the real numbers. (0 so far)" src="assets/pick-c-dark.svg" width="100%">
-</picture></a>
+{{pick}}
 
 ## Tell me a problem
 
-Something gets in your way and tech could fix it? [Tell me about it](https://github.com/chrissgon/chrissgon/issues/new?template=problem.yml). I read every problem that comes in and pick some to build in public.
+Something gets in your way and tech could fix it? [Tell me about it]({{problem_url}}). I read every problem that comes in and pick some to build in public.
 
-No accepted problems yet. Yours could be the first.
+{{problems}}
 
 ## What I build
 
@@ -71,16 +53,11 @@ npm i @chrissgon/perfectui
 Tested on strong and cheap models. [github.com/chrissgon/ai-workbench](https://github.com/chrissgon/ai-workbench)
 </details>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/numbers-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/numbers-light.svg">
-  <img alt="Measured 2026-09-29: 1014 npm downloads of @chrissgon/perfectui in the last 30 days; 43 skills and 3 agents in ai-workbench." src="assets/numbers-dark.svg" width="100%">
-</picture>
+{{numbers}}
 
 ## Latest posts
 
-- 2026-09-29 · [Perfect UI 1.0 is out.](https://www.linkedin.com/feed/update/urn:li:share:7510677308874231808/)
-- 2026-09-28 · [Perfect UI 1.0 ships tomorrow.](https://www.linkedin.com/feed/update/urn:li:share:7510310056685670401/)
+{{posts}}
 
 <details>
 <summary><b>What I write about</b></summary>

@@ -1,0 +1,28 @@
+name: Tell me a problem
+description: Something that gets in your way and tech could fix. I read every problem and pick some to build in public.
+title: "problem: "
+labels: [problem]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue is public. Please don't include personal data, passwords, tokens or anything private.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's the problem?
+      description: What happens today, and why it gets in your way.
+    validations:
+      required: true
+  - type: input
+    id: who
+    attributes:
+      label: Who does it affect?
+      description: You, your team, a group of people you know.
+  - type: checkboxes
+    id: public
+    attributes:
+      label: Public
+      options:
+        - label: I didn't include personal data or secrets.
+          required: true
