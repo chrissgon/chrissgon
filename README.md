@@ -32,7 +32,7 @@ This week's slot is **AI built in public**. Pick the topic I write next: one pic
 <a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20A"><picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/pick-a-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/pick-a-light.svg">
-  <img alt="Pick A: A cheap model obeyed a prompt injection. How a skill fixed it. (0 so far)" src="assets/pick-a-dark.svg" width="100%">
+  <img alt="Pick A: A cheap model obeyed a prompt injection. How a skill fixed it. (1 so far)" src="assets/pick-a-dark.svg" width="100%">
 </picture></a>
 <a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20B"><picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/pick-b-dark.svg">
