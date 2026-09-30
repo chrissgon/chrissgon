@@ -77,6 +77,12 @@ Tested on strong and cheap models. [github.com/chrissgon/ai-workbench](https://g
   <img alt="Measured 2026-09-29: 1014 npm downloads of @chrissgon/perfectui in the last 30 days; 43 skills and 3 agents in ai-workbench." src="assets/numbers-dark.svg" width="100%">
 </picture>
 
+## What I write about
+
+- **Build to serve:** who each project is for, and the minimal web as a way to serve. Got a problem worth solving? [Tell me](#tell-me-a-problem).
+- **AI built in public:** ai-workbench from the inside, with what worked, what failed and real numbers. [The numbers](#what-i-build) are measured every Monday.
+- **Tech in conversation:** what I learn from people and events, and tech news with an opinion. [Pick the next topic](#pick-the-next-post).
+
 ## Latest posts
 
 <a href="https://www.linkedin.com/feed/update/urn:li:share:7510677308874231808/"><picture>
@@ -84,14 +90,6 @@ Tested on strong and cheap models. [github.com/chrissgon/ai-workbench](https://g
   <source media="(prefers-color-scheme: light)" srcset="assets/post-2026-09-29-light.svg">
   <img alt="2026-09-29: Perfect UI 1.0 is out." src="assets/post-2026-09-29-dark.svg" width="32%">
 </picture></a>
-
-<details>
-<summary><b>What I write about</b></summary>
-
-- **Build to serve:** who each project is for, and the minimal web as a way to serve.
-- **AI built in public:** ai-workbench from the inside, with what worked, what failed and real numbers.
-- **Tech in conversation:** what I learn from people and events, and tech news with an opinion.
-</details>
 
 [chrissgon.dev](https://chrissgon.dev) · [LinkedIn](https://www.linkedin.com/in/chrissgon/) · [npm @chrissgon](https://www.npmjs.com/package/@chrissgon/perfectui) · [chrissgon.dev@gmail.com](mailto:chrissgon.dev@gmail.com)
 

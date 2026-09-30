@@ -55,17 +55,15 @@ Tested on strong and cheap models. [github.com/chrissgon/ai-workbench](https://g
 
 {{numbers}}
 
+## What I write about
+
+- **Build to serve:** who each project is for, and the minimal web as a way to serve. Got a problem worth solving? [Tell me](#tell-me-a-problem).
+- **AI built in public:** ai-workbench from the inside, with what worked, what failed and real numbers. [The numbers](#what-i-build) are measured every Monday.
+- **Tech in conversation:** what I learn from people and events, and tech news with an opinion. [Pick the next topic](#pick-the-next-post).
+
 ## Latest posts
 
 {{posts}}
-
-<details>
-<summary><b>What I write about</b></summary>
-
-- **Build to serve:** who each project is for, and the minimal web as a way to serve.
-- **AI built in public:** ai-workbench from the inside, with what worked, what failed and real numbers.
-- **Tech in conversation:** what I learn from people and events, and tech news with an opinion.
-</details>
 
 [chrissgon.dev](https://chrissgon.dev) · [LinkedIn](https://www.linkedin.com/in/chrissgon/) · [npm @chrissgon](https://www.npmjs.com/package/@chrissgon/perfectui) · [chrissgon.dev@gmail.com](mailto:chrissgon.dev@gmail.com)
 
