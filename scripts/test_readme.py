@@ -145,6 +145,15 @@ class Render(Base):
         out = (self.tmp / "README.md").read_text()
         self.assertEqual([s for s in re.findall(r'(?:src|srcset)="([^"]+)"', out) if "://" in s], [])
 
+    def test_post_cards_embed_local_images_only(self):
+        readme.render()
+        out = (self.tmp / "README.md").read_text()
+        self.assertIn('href="https://www.linkedin.com/feed/update/', out)
+        for svg in self.tmp.glob("assets/post-*.svg"):
+            text = svg.read_text()
+            self.assertIn('href="data:image/webp;base64,', text)
+            self.assertNotIn('href="http', text)
+
 
 if __name__ == "__main__":
     unittest.main()

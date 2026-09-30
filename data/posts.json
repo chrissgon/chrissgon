@@ -1,4 +1,9 @@
 [
- {"date": "2026-09-29", "lang": "EN/PT", "title": "Perfect UI 1.0 is out.", "url": "https://www.linkedin.com/feed/update/urn:li:share:7510677308874231808/"},
- {"date": "2026-09-28", "lang": "EN/PT", "title": "Perfect UI 1.0 ships tomorrow.", "url": "https://www.linkedin.com/feed/update/urn:li:share:7510310056685670401/"}
+ {
+  "date": "2026-09-29",
+  "lang": "EN/PT",
+  "title": "Perfect UI 1.0 is out.",
+  "url": "https://www.linkedin.com/feed/update/urn:li:share:7510677308874231808/",
+  "image": "assets/posts/2026-09-29-perfect-ui-1-0.webp"
+ }
 ]

@@ -231,6 +231,38 @@ def numbers_card(c, n):
     return svg_doc(w, h, title, body)
 
 
+def wrap(text, width):
+    lines, cur = [], ""
+    for word in text.split():
+        if cur and len(cur) + 1 + len(word) > width:
+            lines.append(cur); cur = word
+        else:
+            cur = f"{cur} {word}".strip()
+    return lines + [cur] if cur else lines
+
+
+def post_card(c, post):
+    """A post as a card: the post's own image (a local file in assets/posts/) on top, date and title below."""
+    w, img_h = 280, 350
+    lines = wrap(post["title"], 28)[:2]
+    h = img_h + 44 + 22 * 2 + 12  # room for two title lines on every card, so cards side by side line up
+    body = (f'<defs><clipPath id="r"><rect x="1" y="1" width="{w-2}" height="{h-2}" rx="12"/></clipPath></defs>'
+            f'<rect x="1" y="1" width="{w-2}" height="{h-2}" rx="12" fill="{c["bg"]}"/>')
+    if post.get("image"):
+        data = base64.b64encode((ROOT / post["image"]).read_bytes()).decode()
+        body += (f'<image clip-path="url(#r)" x="0" y="0" width="{w}" height="{img_h}" preserveAspectRatio="xMidYMid slice" '
+                 f'href="data:image/webp;base64,{data}"/>')
+    else:
+        body += f'<rect clip-path="url(#r)" x="0" y="0" width="{w}" height="{img_h}" fill="{c["surface"]}"/>'
+    body += (f'<text x="16" y="{img_h + 28}" font-family="{MONO}" font-size="12" fill="{c["muted"]}">'
+             f'{esc(post["date"])} · {esc(post.get("lang", ""))}</text>')
+    for i, line in enumerate(lines):
+        body += (f'<text x="16" y="{img_h + 52 + 22 * i}" font-family="{SANS}" font-size="16" font-weight="600" '
+                 f'fill="{c["text"]}">{esc(line)}</text>')
+    body += f'<rect x="1" y="1" width="{w-2}" height="{h-2}" rx="12" fill="none" stroke="{c["surface"]}" stroke-width="1.5"/>'
+    return svg_doc(w, h, f'{post["date"]}: {post["title"]}', body)
+
+
 def picture(name, alt, width="100%", href=None):
     img = (f'<picture>\n  <source media="(prefers-color-scheme: dark)" srcset="assets/{name}-dark.svg">\n'
            f'  <source media="(prefers-color-scheme: light)" srcset="assets/{name}-light.svg">\n'
@@ -285,7 +317,13 @@ def render():
     else:
         numbers_md = ""
     posts = sorted(load("posts.json"), key=lambda p: p["date"], reverse=True)[:3]
-    posts_md = "\n".join(f"- {p['date']} · [{md_safe(p['title'])}]({p['url']})" for p in posts)
+    cards = []
+    for p in posts:
+        slug = f"post-{p['date']}"
+        for mode, c in MODES.items():
+            write(f"assets/{slug}-{mode}.svg", fonts(post_card(c, p)))
+        cards.append(picture(slug, f"{p['date']}: {p['title']}", width="32%", href=p["url"]))
+    posts_md = "\n".join(cards)
     now_md = (DATA / "now.md").read_text(encoding="utf-8").strip()
     tpl = (ROOT / "scripts" / "README.template.md").read_text(encoding="utf-8")
     out = (tpl.replace("{{now}}", now_md).replace("{{pick}}", pick_md).replace("{{problems}}", prob_md)

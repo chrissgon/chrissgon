@@ -79,8 +79,11 @@ Tested on strong and cheap models. [github.com/chrissgon/ai-workbench](https://g
 
 ## Latest posts
 
-- 2026-09-29 · [Perfect UI 1.0 is out.](https://www.linkedin.com/feed/update/urn:li:share:7510677308874231808/)
-- 2026-09-28 · [Perfect UI 1.0 ships tomorrow.](https://www.linkedin.com/feed/update/urn:li:share:7510310056685670401/)
+<a href="https://www.linkedin.com/feed/update/urn:li:share:7510677308874231808/"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/post-2026-09-29-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/post-2026-09-29-light.svg">
+  <img alt="2026-09-29: Perfect UI 1.0 is out." src="assets/post-2026-09-29-dark.svg" width="32%">
+</picture></a>
 
 <details>
 <summary><b>What I write about</b></summary>
