@@ -32,7 +32,7 @@ OWNER_REPO = "chrissgon/chrissgon"
 LETTERS = ("A", "B", "C")
 REPLIES = {
     "pick_ok": "Thanks, you picked {letter}, \"{topic}\", and it's counted. The chart in the README updates in a minute or two.",
-    "pick_dup": "You already picked in this round, so your first pick stands. A new round opens every Monday.",
+    "pick_dup": "You already picked {letter} in this round, so that first pick stands. A new round opens every Monday.",
     "pick_closed": "There's no open round right now. A new one opens on a Monday, with the links in the README.",
     "pick_invalid": "I couldn't read a pick in this issue, so I closed it. Use the A, B or C links in the README to pick a topic.",
     "problem_ack": "Thanks for writing this up. I read every problem that comes in and pick some to build in public; the accepted ones show up in the README.",
@@ -93,7 +93,7 @@ def pick(issue):
     letter = m.group(1).upper()
     vid = picker_id(issue["user"]["login"], v["round"])
     if vid in v["picks"]:
-        return [{"reply": REPLIES["pick_dup"], "close": True}], False
+        return [{"reply": REPLIES["pick_dup"].format(letter=v["picks"][vid]), "close": True}], False
     v["picks"][vid] = letter
     save("pick.json", v)
     return [{"reply": REPLIES["pick_ok"].format(letter=letter, topic=v["options"][letter]), "close": True}], True

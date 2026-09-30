@@ -10,7 +10,11 @@ concurrency:
   cancel-in-progress: false
 jobs:
   handle:
-    if: github.event.issue.user.type != 'Bot'
+    # opened: a pick or a problem; labeled: only the owner's accepted and delivered labels (the form's own pick and
+    # problem labels would start a second run that does nothing)
+    if: >-
+      github.event.issue.user.type != 'Bot' &&
+      (github.event.action == 'opened' || github.event.label.name == 'accepted' || github.event.label.name == 'delivered')
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:

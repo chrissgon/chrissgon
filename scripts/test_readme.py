@@ -55,7 +55,8 @@ class Picks(Base):
         self.handle(issue_event("opened", "pick: A", login="Ana"))
         actions, changed = self.handle(issue_event("opened", "pick: C", login="ana"))
         self.assertFalse(changed)
-        self.assertEqual(actions[0]["reply"], readme.REPLIES["pick_dup"])
+        self.assertEqual(actions[0]["reply"], readme.REPLIES["pick_dup"].format(letter="A"))
+        self.assertIn("You already picked A", actions[0]["reply"])
         self.assertEqual(list(readme.load("pick.json")["picks"].values()), ["A"])
 
     def test_edited_title_is_invalid(self):
