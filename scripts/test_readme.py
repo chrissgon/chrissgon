@@ -154,6 +154,12 @@ class Render(Base):
             self.assertIn('href="data:image/webp;base64,', text)
             self.assertNotIn('href="http', text)
 
+    def test_linked_pictures_stay_on_one_line(self):
+        readme.render()
+        for line in (self.tmp / "README.md").read_text().splitlines():
+            if line.startswith("<a href="):
+                self.assertTrue(line.endswith("</a>"), line[:60])
+
 
 if __name__ == "__main__":
     unittest.main()

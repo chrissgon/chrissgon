@@ -267,7 +267,9 @@ def picture(name, alt, width="100%", href=None):
     img = (f'<picture>\n  <source media="(prefers-color-scheme: dark)" srcset="assets/{name}-dark.svg">\n'
            f'  <source media="(prefers-color-scheme: light)" srcset="assets/{name}-light.svg">\n'
            f'  <img alt="{esc(alt)}" src="assets/{name}-dark.svg" width="{width}">\n</picture>')
-    return f'<a href="{href}">{img}</a>' if href else img
+    # A linked picture stays on one line: in Markdown a line starting with <source> ends the paragraph that
+    # <a><picture> opened, and GitHub then renders an empty <picture> and links the image to its own file.
+    return f'<a href="{href}">' + re.sub(r"\n\s*", "", img) + '</a>' if href else img
 
 
 def issue_url(**q):

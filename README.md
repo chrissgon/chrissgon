@@ -4,16 +4,8 @@
   <img alt="Christopher Gonçalves · Tech enthusiast & Senior Software Engineer · Building tech that serves people · Creator of Perfect UI & ai-workbench" src="assets/hero-dark.svg" width="100%">
 </picture>
 
-<a href="https://perfectui.dev"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/btn-perfectui-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/btn-perfectui-light.svg">
-  <img alt="Perfect UI" src="assets/btn-perfectui-dark.svg" width="300">
-</picture></a>
-<a href="https://github.com/chrissgon/ai-workbench"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/btn-ai-workbench-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/btn-ai-workbench-light.svg">
-  <img alt="ai-workbench" src="assets/btn-ai-workbench-dark.svg" width="300">
-</picture></a>
+<a href="https://perfectui.dev"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/btn-perfectui-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/btn-perfectui-light.svg"><img alt="Perfect UI" src="assets/btn-perfectui-dark.svg" width="300"></picture></a>
+<a href="https://github.com/chrissgon/ai-workbench"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/btn-ai-workbench-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/btn-ai-workbench-light.svg"><img alt="ai-workbench" src="assets/btn-ai-workbench-dark.svg" width="300"></picture></a>
 
 I build tech that serves people, and I talk about how I build it. Today I'm a senior software engineer with 6+ years shipping production frontends, and I still get as excited as I did on day one.
 
@@ -29,21 +21,9 @@ This page isn't only about me. You can use it: pick what I write next, or tell m
 
 This week's slot is **AI built in public**. Pick the topic I write next: one pick per GitHub account, and the round closes on 2026-10-05.
 
-<a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20A"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/pick-a-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/pick-a-light.svg">
-  <img alt="Pick A: A cheap model obeyed a prompt injection. How a skill fixed it. (1 so far)" src="assets/pick-a-dark.svg" width="100%">
-</picture></a>
-<a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20B"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/pick-b-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/pick-b-light.svg">
-  <img alt="Pick B: LinkedIn's API won't let me read comments. What I did instead. (0 so far)" src="assets/pick-b-dark.svg" width="100%">
-</picture></a>
-<a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20C"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/pick-c-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/pick-c-light.svg">
-  <img alt="Pick C: Evals with and without a skill: the real numbers. (0 so far)" src="assets/pick-c-dark.svg" width="100%">
-</picture></a>
+<a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20A"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/pick-a-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/pick-a-light.svg"><img alt="Pick A: A cheap model obeyed a prompt injection. How a skill fixed it. (1 so far)" src="assets/pick-a-dark.svg" width="100%"></picture></a>
+<a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20B"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/pick-b-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/pick-b-light.svg"><img alt="Pick B: LinkedIn's API won't let me read comments. What I did instead. (0 so far)" src="assets/pick-b-dark.svg" width="100%"></picture></a>
+<a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20C"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/pick-c-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/pick-c-light.svg"><img alt="Pick C: Evals with and without a skill: the real numbers. (0 so far)" src="assets/pick-c-dark.svg" width="100%"></picture></a>
 
 ## Tell me a problem
 
@@ -85,11 +65,7 @@ Tested on strong and cheap models. [github.com/chrissgon/ai-workbench](https://g
 
 ## Latest posts
 
-<a href="https://www.linkedin.com/feed/update/urn:li:share:7510677308874231808/"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/post-2026-09-29-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/post-2026-09-29-light.svg">
-  <img alt="2026-09-29: Perfect UI 1.0 is out." src="assets/post-2026-09-29-dark.svg" width="32%">
-</picture></a>
+<a href="https://www.linkedin.com/feed/update/urn:li:share:7510677308874231808/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/post-2026-09-29-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/post-2026-09-29-light.svg"><img alt="2026-09-29: Perfect UI 1.0 is out." src="assets/post-2026-09-29-dark.svg" width="32%"></picture></a>
 
 [chrissgon.dev](https://chrissgon.dev) · [LinkedIn](https://www.linkedin.com/in/chrissgon/) · [npm @chrissgon](https://www.npmjs.com/package/@chrissgon/perfectui) · [chrissgon.dev@gmail.com](mailto:chrissgon.dev@gmail.com)
 

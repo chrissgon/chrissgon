@@ -4,16 +4,8 @@
   <img alt="Christopher Gonçalves · Tech enthusiast & Senior Software Engineer · Building tech that serves people · Creator of Perfect UI & ai-workbench" src="assets/hero-dark.svg" width="100%">
 </picture>
 
-<a href="https://perfectui.dev"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/btn-perfectui-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/btn-perfectui-light.svg">
-  <img alt="Perfect UI" src="assets/btn-perfectui-dark.svg" width="300">
-</picture></a>
-<a href="https://github.com/chrissgon/ai-workbench"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/btn-ai-workbench-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/btn-ai-workbench-light.svg">
-  <img alt="ai-workbench" src="assets/btn-ai-workbench-dark.svg" width="300">
-</picture></a>
+<a href="https://perfectui.dev"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/btn-perfectui-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/btn-perfectui-light.svg"><img alt="Perfect UI" src="assets/btn-perfectui-dark.svg" width="300"></picture></a>
+<a href="https://github.com/chrissgon/ai-workbench"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/btn-ai-workbench-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/btn-ai-workbench-light.svg"><img alt="ai-workbench" src="assets/btn-ai-workbench-dark.svg" width="300"></picture></a>
 
 I build tech that serves people, and I talk about how I build it. Today I'm a senior software engineer with 6+ years shipping production frontends, and I still get as excited as I did on day one.
 
