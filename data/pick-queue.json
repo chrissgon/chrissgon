@@ -1,1 +1,10 @@
-[]
+[
+ {
+  "pillar": "Tech in conversation",
+  "options": {
+   "A": "600+ hours of live coding: what it taught me about explaining",
+   "B": "What Erick Wendel's \"not seen, not remembered\" changed for me",
+   "C": "Working in English every day: what nobody warned me about"
+  }
+ }
+]
