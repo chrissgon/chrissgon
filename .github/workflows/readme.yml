@@ -1,0 +1,38 @@
+name: readme
+# Counts picks, acknowledges problems, closes and opens the weekly round, measures the numbers.
+# Every run sweeps all open pick and problem issues in creation order, so a pending run that GitHub cancels,
+# or runs that finish out of order, lose nothing: the next run finds the same open issues. The hourly run is
+# the safety net and closes the round on Mondays at 12:00 UTC (09:00 in São Paulo).
+# Issue text never reaches a shell command: scripts/readme.py reads issues through the API.
+on:
+  issues:
+    types: [opened, labeled]
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+permissions: {}
+jobs:
+  sync:
+    # issues: opened, or the owner's accepted and delivered labels (the forms' own pick and problem labels need no run)
+    if: >-
+      github.event_name != 'issues' ||
+      (github.event.issue.user.type != 'Bot' &&
+       (github.event.action == 'opened' || github.event.label.name == 'accepted' || github.event.label.name == 'delivered'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    concurrency:
+      group: readme
+      cancel-in-progress: false
+    permissions:
+      contents: write
+      issues: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.repository.default_branch || 'master' }}
+          persist-credentials: false
+      - run: python3 -m unittest discover -s scripts -p "test_*.py"
+      - run: python3 scripts/readme.py sync --apply --event "$GITHUB_EVENT_PATH"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          README_BRANCH: ${{ github.event.repository.default_branch || 'master' }}

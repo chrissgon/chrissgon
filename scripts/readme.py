@@ -2,12 +2,10 @@
 """Keep the chrissgon/chrissgon profile README alive: picks, problems, weekly numbers.
 
 Usage:
-  python3 scripts/readme.py issue --event <event.json> [--apply]   handle an issue event (pick or problem)
-  python3 scripts/readme.py weekly [--apply]                         measure numbers, close the round, open the next
-  python3 scripts/readme.py render                                   rebuild README.md and the generated SVGs
+  python3 scripts/readme.py sync --apply [--event <event.json>]   bring the README up to date (run by the workflow)
+  python3 scripts/readme.py render                                 rebuild README.md and the generated SVGs locally
 
-Without --apply nothing leaves the machine: files are written locally and the replies, closes and
-commit are printed as JSON on stdout. With --apply the script calls the GitHub API with GITHUB_TOKEN
+sync always talks to the GitHub API: with --apply the script calls the GitHub API with GITHUB_TOKEN
 and GITHUB_REPOSITORY (set by GitHub Actions) and commits the changed files.
 
 Rules (NFR-2): text written by a visitor never reaches the README. A pick becomes a count; a problem
@@ -21,6 +19,7 @@ import hashlib
 import json
 import os
 import re
+import subprocess
 import sys
 import urllib.parse
 import urllib.request
@@ -116,7 +115,7 @@ def problem_status(issue, status):
     return [], True
 
 
-# ---------- weekly ----------
+# ---------- rounds and numbers ----------
 
 def get_json(url, token=None):
     req = urllib.request.Request(url, headers={"User-Agent": "chrissgon-readme", "Accept": "application/vnd.github+json"})
@@ -137,11 +136,17 @@ def measure(token=None):
             "last_sha": last["sha"][:7], "last_date": last["commit"]["committer"]["date"][:10]}
 
 
-def rotate(today):
-    """Close the current round if it has ended and open the next queued one."""
+def due(now, closes):
+    """A round closes on its closing day at 12:00 UTC, 09:00 in São Paulo."""
+    return now >= dt.datetime.fromisoformat(f"{closes}T12:00:00+00:00")
+
+
+def rotate(now):
+    """Close the current round if it has ended and open the next queued one. now: an aware datetime."""
     v, queue = load("pick.json"), load("pick-queue.json")
+    today = now.date()
     changed = False
-    if v.get("open") and today >= v["closes"]:
+    if v.get("open") and due(now, v["closes"]):
         counts = {k: list(v["picks"].values()).count(k) for k in LETTERS}
         best = max(counts.values())
         winner = next(k for k in LETTERS if counts[k] == best) if best else None
@@ -151,14 +156,38 @@ def rotate(today):
         changed = True
     if not v.get("open") and queue:
         nxt = queue.pop(0)
-        start = dt.date.fromisoformat(today)
-        v.update(open=True, round=today, closes=(start + dt.timedelta(days=7)).isoformat(),
+        v.update(open=True, round=today.isoformat(), closes=(today + dt.timedelta(days=7)).isoformat(),
                  pillar=nxt["pillar"], options=nxt["options"], picks={})
         save("pick-queue.json", queue)
         changed = True
     if changed:
         save("pick.json", v)
     return changed
+
+
+def sweep(api, owner, now, measure_fn=None):
+    """Bring the README up to date with GitHub: every open pick issue in creation order, every open problem issue
+    not yet acknowledged, the round if it is due, the numbers if a week old. Returns (replies, changed files).
+
+    Working from what is open, not from the event that started the run, is what makes the result right when GitHub
+    cancels a pending run or runs them out of order: whichever run comes next finds the same open issues."""
+    replies, changed = [], set()
+    for issue in sorted(api.open_issues("pick"), key=lambda i: i["number"]):
+        actions, ch = handle_issue({"action": "opened", "issue": issue, "sender": issue["user"]}, owner)
+        if actions:
+            replies.append((issue["number"], actions))
+        if ch:
+            changed.add("data/pick.json")
+    for issue in sorted(api.open_issues("problem"), key=lambda i: i["number"]):
+        if issue.get("user", {}).get("type") != "Bot" and not api.acknowledged(issue["number"], REPLIES["problem_ack"]):
+            replies.append((issue["number"], [{"reply": REPLIES["problem_ack"], "close": False}]))
+    if rotate(now):
+        changed |= {"data/pick.json", "data/pick-queue.json"}
+    n = load("numbers.json")
+    if not n or now.date() - dt.date.fromisoformat(n["date"]) >= dt.timedelta(days=7):
+        save("numbers.json", (measure_fn or measure)(os.environ.get("GITHUB_TOKEN")))
+        changed.add("data/numbers.json")
+    return replies, changed
 
 
 # ---------- rendering ----------
@@ -362,15 +391,26 @@ class GitHub:
         with urllib.request.urlopen(req, timeout=30) as r:
             return json.load(r) if r.status != 204 else None
 
+    def open_issues(self, label):
+        items = self.call("GET", f"/issues?state=open&labels={label}&sort=created&direction=asc&per_page=100")
+        return [i for i in items if "pull_request" not in i]
+
+    def acknowledged(self, number, text):
+        return any(c["user"]["login"] == "github-actions[bot]" and c["body"] == text
+                   for c in self.call("GET", f"/issues/{number}/comments?per_page=100"))
+
     def act(self, number, actions):
         for a in actions:
             self.call("POST", f"/issues/{number}/comments", {"body": a["reply"]})
             if a["close"]:
                 self.call("PATCH", f"/issues/{number}", {"state": "closed", "state_reason": "completed"})
 
-    def commit(self, paths, message, branch):
-        """One commit with every path, made through the API so GitHub signs it."""
+    def commit(self, paths, message, branch, expected_parent=None):
+        """One commit with every path, made through the API so GitHub signs it. Refuses when the branch moved since
+        the checkout (expected_parent): the files here would be stale, and the next run starts from the new head."""
         head = self.call("GET", f"/git/ref/heads/{branch}")["object"]["sha"]
+        if expected_parent and head != expected_parent:
+            raise RuntimeError(f"{branch} moved from {expected_parent[:7]} to {head[:7]} since the checkout; the next run retries")
         base = self.call("GET", f"/git/commits/{head}")["tree"]["sha"]
         tree = [{"path": p, "mode": "100644", "type": "blob",
                  "sha": self.call("POST", "/git/blobs", {"content": base64.b64encode((ROOT / p).read_bytes()).decode(),
@@ -381,42 +421,42 @@ class GitHub:
         return sha
 
 
-def finish(args, actions, data_changed, data_files, message, number=None):
-    written = render() if data_changed else []
-    paths = sorted(set(data_files if data_changed else []) | set(written))
-    plan = {"actions": actions, "commit": paths, "message": message}
-    if not args.apply:
-        print(json.dumps(plan, indent=1, ensure_ascii=False))
-        return
-    gh = GitHub()
-    if paths:
-        gh.commit(paths, message, os.environ.get("README_BRANCH", "master"))
-    if number is not None and actions:
-        gh.act(number, actions)
-    print(json.dumps(plan, indent=1, ensure_ascii=False))
+def local_head():
+    try:
+        return subprocess.run(["git", "-C", str(ROOT), "rev-parse", "HEAD"], capture_output=True, text=True, check=True).stdout.strip()
+    except (OSError, subprocess.CalledProcessError):
+        return None
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
-    s = sub.add_parser("issue"); s.add_argument("--event", required=True); s.add_argument("--apply", action="store_true")
-    s = sub.add_parser("weekly"); s.add_argument("--apply", action="store_true"); s.add_argument("--today")
+    s = sub.add_parser("sync"); s.add_argument("--event"); s.add_argument("--apply", action="store_true")
     sub.add_parser("render")
     args = ap.parse_args()
     if args.cmd == "render":
         print(json.dumps(render(), indent=1))
-    elif args.cmd == "issue":
+        return
+    if not args.apply:
+        sys.exit("readme.py: sync talks to the GitHub API; run it with --apply in the workflow (tests cover it offline)")
+    api, now = GitHub(), dt.datetime.now(dt.timezone.utc)
+    owner = os.environ.get("GITHUB_REPOSITORY_OWNER", OWNER_REPO.split("/")[0])
+    changed, replies = set(), []
+    if args.event:  # the owner's accepted and delivered labels come from the event; picks and problems from the sweep
         event = json.loads(Path(args.event).read_text(encoding="utf-8"))
-        owner = event.get("repository", {}).get("owner", {}).get("login", OWNER_REPO.split("/")[0])
-        actions, changed = handle_issue(event, owner)
-        number = event.get("issue", {}).get("number")
-        finish(args, actions, changed, ["data/pick.json", "data/problems.json"], f"chore(readme): issue #{number}", number)
-    elif args.cmd == "weekly":
-        today = args.today or dt.date.today().isoformat()
-        numbers = measure(os.environ.get("GITHUB_TOKEN"))
-        save("numbers.json", numbers)
-        rotate(today)
-        finish(args, [], True, ["data/numbers.json", "data/pick.json", "data/pick-queue.json"], f"chore(readme): weekly update {today}")
+        if event.get("action") == "labeled":
+            _, ch = handle_issue(event, owner)
+            if ch:
+                changed.add("data/problems.json")
+    r, ch = sweep(api, owner, now)
+    replies += r
+    changed |= ch
+    paths = sorted(changed | set(render() if changed else []))
+    if paths:
+        api.commit(paths, f"chore(readme): sync {now:%Y-%m-%d %H:%M} UTC", os.environ.get("README_BRANCH", "master"), local_head())
+    for number, actions in replies:  # replies only after the commit, so "it's counted" is true when it is read
+        api.act(number, actions)
+    print(json.dumps({"commit": paths, "replies": [n for n, _ in replies]}, indent=1))
 
 
 if __name__ == "__main__":

@@ -114,14 +114,78 @@ class Problems(Base):
         self.assertEqual(readme.load("problems.json")[0]["status"], "delivered")
 
 
-class Weekly(Base):
-    def test_round_closes_and_next_opens(self):
+UTC = readme.dt.timezone.utc
+
+
+def at(stamp):
+    return readme.dt.datetime.fromisoformat(stamp).replace(tzinfo=UTC)
+
+
+class FakeAPI:
+    def __init__(self, issues=(), comments=None):
+        self.issues, self.comments = list(issues), comments or {}
+
+    def open_issues(self, label):
+        return [i for i in self.issues if label in {l["name"] for l in i["labels"]}]
+
+    def acknowledged(self, number, text):
+        return text in self.comments.get(number, [])
+
+
+def open_issue(number, title, login="visitor", label="pick", user_type="User"):
+    return {"number": number, "title": title, "user": {"login": login, "type": user_type}, "labels": [{"name": label}]}
+
+
+class Sweep(Base):
+    def setUp(self):
+        super().setUp()
+        readme.save("numbers.json", {"date": "2026-09-29", "npm_month": 1, "npm_period": "x", "skills": 1,
+                                     "agents": 1, "last_sha": "0000000", "last_date": "2026-09-29"})
+
+    def sweep(self, api, now="2026-09-30T05:00:00"):
+        return readme.sweep(api, "chrissgon", at(now), measure_fn=lambda token: self.fail("measured too early"))
+
+    def test_picks_apply_in_creation_order_whatever_the_listing_order(self):
+        api = FakeAPI([open_issue(11, "pick: B", "ana"), open_issue(10, "pick: A", "ana")])
+        replies, changed = self.sweep(api)
+        self.assertEqual([n for n, _ in replies], [10, 11])
+        self.assertIn("changed from A to B", replies[1][1][0]["reply"])
+        self.assertEqual(list(readme.load("pick.json")["picks"].values()), ["B"])
+        self.assertEqual(changed, {"data/pick.json"})
+
+    def test_a_missed_run_is_caught_by_the_next(self):
+        api = FakeAPI([open_issue(1, "pick: A", "a"), open_issue(2, "pick: C", "b"), open_issue(3, "pick: C", "c")])
+        self.sweep(api)
+        counts = list(readme.load("pick.json")["picks"].values())
+        self.assertEqual(sorted(counts), ["A", "C", "C"])
+
+    def test_problem_is_acknowledged_once(self):
+        api = FakeAPI([open_issue(5, "problem: x", label="problem")])
+        replies, _ = self.sweep(api)
+        self.assertEqual(replies, [(5, [{"reply": readme.REPLIES["problem_ack"], "close": False}])])
+        api.comments = {5: [readme.REPLIES["problem_ack"]]}
+        self.assertEqual(self.sweep(api)[0], [])
+
+    def test_bot_issues_are_left_alone(self):
+        replies, changed = self.sweep(FakeAPI([open_issue(9, "pick: A", user_type="Bot")]))
+        self.assertEqual((replies, changed), ([], set()))
+
+    def test_numbers_are_measured_after_a_week(self):
+        seen = []
+        readme.sweep(FakeAPI(), "chrissgon", at("2026-10-06T13:00:00"),
+                     measure_fn=lambda token: seen.append(1) or {"date": "2026-10-06", "npm_month": 2, "npm_period": "x",
+                                                                 "skills": 1, "agents": 1, "last_sha": "1", "last_date": "x"})
+        self.assertEqual(seen, [1])
+
+
+class Rounds(Base):
+    def test_round_closes_on_monday_at_noon_utc_and_next_opens(self):
         self.handle(issue_event("opened", "pick: C", login="a"))
         self.handle(issue_event("opened", "pick: C", login="b"))
         self.handle(issue_event("opened", "pick: A", login="c"))
         readme.save("pick-queue.json", [{"pillar": "Tech in conversation", "options": {"A": "x", "B": "y", "C": "z"}}])
-        self.assertFalse(readme.rotate("2026-10-04"))
-        self.assertTrue(readme.rotate("2026-10-05"))
+        self.assertFalse(readme.rotate(at("2026-10-05T11:59:00")))
+        self.assertTrue(readme.rotate(at("2026-10-05T12:00:00")))
         v = readme.load("pick.json")
         self.assertEqual(v["history"][0]["winner"], "C")
         self.assertEqual(v["history"][0]["counts"], {"A": 1, "B": 0, "C": 2})
@@ -131,7 +195,7 @@ class Weekly(Base):
 
     def test_empty_queue_leaves_round_closed(self):
         readme.save("pick-queue.json", [])
-        readme.rotate("2026-10-05")
+        readme.rotate(at("2026-10-05T12:00:00"))
         self.assertFalse(readme.load("pick.json")["open"])
 
 
