@@ -267,10 +267,18 @@ def post_card(c, post):
     return svg_doc(w, h, f'{post["date"]}: {post["title"]}', body)
 
 
+def versioned(rel):
+    """rel plus ?v=<first 8 hex of the file's sha256>. GitHub serves repository images with max-age=300, so a
+    redrawn card kept its old picture for minutes; a new address on every change makes the new picture show at once."""
+    p = ROOT / rel
+    return f"{rel}?v={hashlib.sha256(p.read_bytes()).hexdigest()[:8]}" if p.exists() else rel
+
+
 def picture(name, alt, width="100%", href=None):
-    img = (f'<picture>\n  <source media="(prefers-color-scheme: dark)" srcset="assets/{name}-dark.svg">\n'
-           f'  <source media="(prefers-color-scheme: light)" srcset="assets/{name}-light.svg">\n'
-           f'  <img alt="{esc(alt)}" src="assets/{name}-dark.svg" width="{width}">\n</picture>')
+    dark, light = versioned(f"assets/{name}-dark.svg"), versioned(f"assets/{name}-light.svg")
+    img = (f'<picture>\n  <source media="(prefers-color-scheme: dark)" srcset="{dark}">\n'
+           f'  <source media="(prefers-color-scheme: light)" srcset="{light}">\n'
+           f'  <img alt="{esc(alt)}" src="{dark}" width="{width}">\n</picture>')
     # A linked picture stays on one line: in Markdown a line starting with <source> ends the paragraph that
     # <a><picture> opened, and GitHub then renders an empty <picture> and links the image to its own file.
     return f'<a href="{href}">' + re.sub(r"\n\s*", "", img) + '</a>' if href else img

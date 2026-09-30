@@ -1,6 +1,7 @@
 """Tests for scripts/readme.py. Run: python3 -m unittest discover -s scripts -p "test_*.py"
 Each test works on a temporary copy of the repository, so data/ and README.md stay untouched."""
 import json
+import re
 import os
 import shutil
 import sys
@@ -166,6 +167,16 @@ class Render(Base):
         for line in (self.tmp / "README.md").read_text().splitlines():
             if line.startswith("<a href="):
                 self.assertTrue(line.endswith("</a>"), line[:60])
+
+    def test_image_address_changes_when_the_card_changes(self):
+        readme.render()
+        before = re.search(r'srcset="(assets/pick-b-dark\.svg\?v=[0-9a-f]{8})"', (self.tmp / "README.md").read_text()).group(1)
+        self.handle(issue_event("opened", "pick: B", login="someone"))
+        readme.render()
+        after = re.search(r'srcset="(assets/pick-b-dark\.svg\?v=[0-9a-f]{8})"', (self.tmp / "README.md").read_text()).group(1)
+        self.assertNotEqual(before, after)
+        readme.render()
+        self.assertIn(after, (self.tmp / "README.md").read_text())
 
 
 if __name__ == "__main__":

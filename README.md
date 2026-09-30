@@ -21,9 +21,9 @@ This page isn't only about me. You can use it: pick what I write next, or tell m
 
 This week's slot is **AI built in public**. Pick the topic I write next: one pick per GitHub account, which you can change until the round closes on 2026-10-05.
 
-<a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20A"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/pick-a-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/pick-a-light.svg"><img alt="Pick A: A cheap model obeyed a prompt injection. How a skill fixed it. (0 so far)" src="assets/pick-a-dark.svg" width="100%"></picture></a>
-<a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20B"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/pick-b-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/pick-b-light.svg"><img alt="Pick B: LinkedIn's API won't let me read comments. What I did instead. (1 so far)" src="assets/pick-b-dark.svg" width="100%"></picture></a>
-<a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20C"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/pick-c-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/pick-c-light.svg"><img alt="Pick C: Evals with and without a skill: the real numbers. (0 so far)" src="assets/pick-c-dark.svg" width="100%"></picture></a>
+<a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20A"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/pick-a-dark.svg?v=437bbdec"><source media="(prefers-color-scheme: light)" srcset="assets/pick-a-light.svg?v=7ae10ef4"><img alt="Pick A: A cheap model obeyed a prompt injection. How a skill fixed it. (0 so far)" src="assets/pick-a-dark.svg?v=437bbdec" width="100%"></picture></a>
+<a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20B"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/pick-b-dark.svg?v=29b9a778"><source media="(prefers-color-scheme: light)" srcset="assets/pick-b-light.svg?v=008ec9e3"><img alt="Pick B: LinkedIn's API won't let me read comments. What I did instead. (1 so far)" src="assets/pick-b-dark.svg?v=29b9a778" width="100%"></picture></a>
+<a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20C"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/pick-c-dark.svg?v=2d0e001e"><source media="(prefers-color-scheme: light)" srcset="assets/pick-c-light.svg?v=a416bafa"><img alt="Pick C: Evals with and without a skill: the real numbers. (0 so far)" src="assets/pick-c-dark.svg?v=2d0e001e" width="100%"></picture></a>
 
 ## Tell me a problem
 
@@ -52,9 +52,9 @@ Tested on strong and cheap models. [github.com/chrissgon/ai-workbench](https://g
 </details>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/numbers-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/numbers-light.svg">
-  <img alt="Measured 2026-09-29: 1014 npm downloads of @chrissgon/perfectui in the last 30 days; 43 skills and 3 agents in ai-workbench." src="assets/numbers-dark.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/numbers-dark.svg?v=2bacb234">
+  <source media="(prefers-color-scheme: light)" srcset="assets/numbers-light.svg?v=f3285f3f">
+  <img alt="Measured 2026-09-29: 1014 npm downloads of @chrissgon/perfectui in the last 30 days; 43 skills and 3 agents in ai-workbench." src="assets/numbers-dark.svg?v=2bacb234" width="100%">
 </picture>
 
 ## What I write about
@@ -65,7 +65,7 @@ Tested on strong and cheap models. [github.com/chrissgon/ai-workbench](https://g
 
 ## Latest posts
 
-<a href="https://www.linkedin.com/feed/update/urn:li:share:7510677308874231808/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/post-2026-09-29-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/post-2026-09-29-light.svg"><img alt="2026-09-29: Perfect UI 1.0 is out." src="assets/post-2026-09-29-dark.svg" width="32%"></picture></a>
+<a href="https://www.linkedin.com/feed/update/urn:li:share:7510677308874231808/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/post-2026-09-29-dark.svg?v=5820761b"><source media="(prefers-color-scheme: light)" srcset="assets/post-2026-09-29-light.svg?v=2b2c0b3a"><img alt="2026-09-29: Perfect UI 1.0 is out." src="assets/post-2026-09-29-dark.svg?v=5820761b" width="32%"></picture></a>
 
 [chrissgon.dev](https://chrissgon.dev) · [LinkedIn](https://www.linkedin.com/in/chrissgon/) · [npm @chrissgon](https://www.npmjs.com/package/@chrissgon/perfectui) · [chrissgon.dev@gmail.com](mailto:chrissgon.dev@gmail.com)
 
