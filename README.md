@@ -19,7 +19,7 @@ This page isn't only about me. You can use it: pick what I write next, or tell m
 
 ## Pick the next post
 
-This week's slot is **AI built in public**. Pick the topic I write next: one pick per GitHub account, and the round closes on 2026-10-05.
+This week's slot is **AI built in public**. Pick the topic I write next: one pick per GitHub account, which you can change until the round closes on 2026-10-05.
 
 <a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20A"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/pick-a-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/pick-a-light.svg"><img alt="Pick A: A cheap model obeyed a prompt injection. How a skill fixed it. (1 so far)" src="assets/pick-a-dark.svg" width="100%"></picture></a>
 <a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20B"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/pick-b-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/pick-b-light.svg"><img alt="Pick B: LinkedIn's API won't let me read comments. What I did instead. (0 so far)" src="assets/pick-b-dark.svg" width="100%"></picture></a>

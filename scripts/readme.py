@@ -32,7 +32,8 @@ OWNER_REPO = "chrissgon/chrissgon"
 LETTERS = ("A", "B", "C")
 REPLIES = {
     "pick_ok": "Thanks, you picked {letter}, \"{topic}\", and it's counted. The chart in the README updates in a minute or two.",
-    "pick_dup": "You already picked {letter} in this round, so that first pick stands. A new round opens every Monday.",
+    "pick_changed": "Done, your pick changed from {old} to {letter}, \"{topic}\". Each account counts once, so only {letter} counts now.",
+    "pick_same": "You already picked {letter} in this round, and it still counts. To change it, use another letter's link in the README.",
     "pick_closed": "There's no open round right now. A new one opens on a Monday, with the links in the README.",
     "pick_invalid": "I couldn't read a pick in this issue, so I closed it. Use the A, B or C links in the README to pick a topic.",
     "problem_ack": "Thanks for writing this up. I read every problem that comes in and pick some to build in public; the accepted ones show up in the README.",
@@ -92,10 +93,13 @@ def pick(issue):
         return [{"reply": REPLIES["pick_invalid"], "close": True}], False
     letter = m.group(1).upper()
     vid = picker_id(issue["user"]["login"], v["round"])
-    if vid in v["picks"]:
-        return [{"reply": REPLIES["pick_dup"].format(letter=v["picks"][vid]), "close": True}], False
-    v["picks"][vid] = letter
+    old = v["picks"].get(vid)
+    if old == letter:
+        return [{"reply": REPLIES["pick_same"].format(letter=letter), "close": True}], False
+    v["picks"][vid] = letter  # a new letter from the same account replaces its pick: still one per account
     save("pick.json", v)
+    if old:
+        return [{"reply": REPLIES["pick_changed"].format(old=old, letter=letter, topic=v["options"][letter]), "close": True}], True
     return [{"reply": REPLIES["pick_ok"].format(letter=letter, topic=v["options"][letter]), "close": True}], True
 
 
@@ -295,7 +299,7 @@ def render():
             cards.append(picture(f"pick-{k.lower()}", f"Pick {k}: {v['options'][k]} ({counts[k]} so far)",
                                  href=issue_url(template="pick.yml", title=f"pick: {k}")))
         pick_md = (f"This week's slot is **{v['pillar']}**. Pick the topic I write next: one pick per GitHub account, "
-                   f"and the round closes on {v['closes']}.\n\n" + "\n".join(cards))
+                   f"which you can change until the round closes on {v['closes']}.\n\n" + "\n".join(cards))
     else:
         pick_md = "The next round opens on a Monday. Until then, the last result is below."
     last = next((h for h in v["history"] if h.get("winner")), None)

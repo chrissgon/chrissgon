@@ -51,12 +51,18 @@ class Picks(Base):
         self.assertTrue(actions[0]["close"])
         self.assertIn("you picked B", actions[0]["reply"])
 
-    def test_second_pick_same_account_is_ignored(self):
+    def test_new_letter_from_same_account_replaces_the_pick(self):
         self.handle(issue_event("opened", "pick: A", login="Ana"))
         actions, changed = self.handle(issue_event("opened", "pick: C", login="ana"))
+        self.assertTrue(changed)
+        self.assertIn("changed from A to C", actions[0]["reply"])
+        self.assertEqual(list(readme.load("pick.json")["picks"].values()), ["C"])
+
+    def test_same_letter_again_changes_nothing(self):
+        self.handle(issue_event("opened", "pick: A", login="ana"))
+        actions, changed = self.handle(issue_event("opened", "pick: a", login="Ana"))
         self.assertFalse(changed)
-        self.assertEqual(actions[0]["reply"], readme.REPLIES["pick_dup"].format(letter="A"))
-        self.assertIn("You already picked A", actions[0]["reply"])
+        self.assertEqual(actions[0]["reply"], readme.REPLIES["pick_same"].format(letter="A"))
         self.assertEqual(list(readme.load("pick.json")["picks"].values()), ["A"])
 
     def test_edited_title_is_invalid(self):
