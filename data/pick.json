@@ -1,15 +1,30 @@
 {
  "open": true,
- "round": "2026-09-29",
- "closes": "2026-10-05",
- "pillar": "AI built in public",
+ "round": "2026-10-05",
+ "closes": "2026-10-12",
+ "pillar": "Tech in conversation",
  "options": {
-  "A": "A cheap model obeyed a prompt injection. How a skill fixed it.",
-  "B": "LinkedIn's API won't let me read comments. What I did instead.",
-  "C": "Evals with and without a skill: the real numbers."
+  "A": "600+ hours of live coding: what it taught me about explaining",
+  "B": "What Erick Wendel's \"not seen, not remembered\" changed for me",
+  "C": "Working in English every day: what nobody warned me about"
  },
- "picks": {
-  "568356af85f64390": "B"
- },
- "history": []
+ "picks": {},
+ "history": [
+  {
+   "round": "2026-09-29",
+   "pillar": "AI built in public",
+   "options": {
+    "A": "A cheap model obeyed a prompt injection. How a skill fixed it.",
+    "B": "LinkedIn's API won't let me read comments. What I did instead.",
+    "C": "Evals with and without a skill: the real numbers."
+   },
+   "counts": {
+    "A": 0,
+    "B": 1,
+    "C": 0
+   },
+   "winner": "B",
+   "post_url": null
+  }
+ ]
 }

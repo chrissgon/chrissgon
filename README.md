@@ -19,11 +19,13 @@ This page isn't only about me. You can use it: pick what I write next, or tell m
 
 ## Pick the next post
 
-This week's slot is **AI built in public**. Pick the topic I write next: one pick per GitHub account, which you can change until the round closes on 2026-10-05.
+This week's slot is **Tech in conversation**. Pick the topic I write next: one pick per GitHub account, which you can change until the round closes on 2026-10-12.
 
-<a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20A"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/pick-a-dark.svg?v=437bbdec"><source media="(prefers-color-scheme: light)" srcset="assets/pick-a-light.svg?v=7ae10ef4"><img alt="Pick A: A cheap model obeyed a prompt injection. How a skill fixed it. (0 so far)" src="assets/pick-a-dark.svg?v=437bbdec" width="100%"></picture></a>
-<a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20B"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/pick-b-dark.svg?v=29b9a778"><source media="(prefers-color-scheme: light)" srcset="assets/pick-b-light.svg?v=008ec9e3"><img alt="Pick B: LinkedIn's API won't let me read comments. What I did instead. (1 so far)" src="assets/pick-b-dark.svg?v=29b9a778" width="100%"></picture></a>
-<a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20C"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/pick-c-dark.svg?v=2d0e001e"><source media="(prefers-color-scheme: light)" srcset="assets/pick-c-light.svg?v=a416bafa"><img alt="Pick C: Evals with and without a skill: the real numbers. (0 so far)" src="assets/pick-c-dark.svg?v=2d0e001e" width="100%"></picture></a>
+<a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20A"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/pick-a-dark.svg?v=e19f895e"><source media="(prefers-color-scheme: light)" srcset="assets/pick-a-light.svg?v=0a1822b6"><img alt="Pick A: 600+ hours of live coding: what it taught me about explaining (0 so far)" src="assets/pick-a-dark.svg?v=e19f895e" width="100%"></picture></a>
+<a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20B"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/pick-b-dark.svg?v=f262b1f6"><source media="(prefers-color-scheme: light)" srcset="assets/pick-b-light.svg?v=d3a0f000"><img alt="Pick B: What Erick Wendel's &quot;not seen, not remembered&quot; changed for me (0 so far)" src="assets/pick-b-dark.svg?v=f262b1f6" width="100%"></picture></a>
+<a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20C"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/pick-c-dark.svg?v=88d82bf3"><source media="(prefers-color-scheme: light)" srcset="assets/pick-c-light.svg?v=3dc50020"><img alt="Pick C: Working in English every day: what nobody warned me about (0 so far)" src="assets/pick-c-dark.svg?v=88d82bf3" width="100%"></picture></a>
+
+Last round you picked **LinkedIn's API won't let me read comments. What I did instead.**. I'm writing it now.
 
 ## Tell me a problem
 
