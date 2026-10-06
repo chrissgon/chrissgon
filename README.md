@@ -54,9 +54,9 @@ Tested on strong and cheap models. [github.com/chrissgon/ai-workbench](https://g
 </details>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/numbers-dark.svg?v=2bacb234">
-  <source media="(prefers-color-scheme: light)" srcset="assets/numbers-light.svg?v=f3285f3f">
-  <img alt="Measured 2026-09-29: 1014 npm downloads of @chrissgon/perfectui in the last 30 days; 43 skills and 3 agents in ai-workbench." src="assets/numbers-dark.svg?v=2bacb234" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/numbers-dark.svg?v=7b5b7194">
+  <source media="(prefers-color-scheme: light)" srcset="assets/numbers-light.svg?v=1b9792d5">
+  <img alt="Measured 2026-10-06: 1213 npm downloads of @chrissgon/perfectui in the last 30 days; 48 skills and 4 agents in ai-workbench." src="assets/numbers-dark.svg?v=7b5b7194" width="100%">
 </picture>
 
 ## What I write about
