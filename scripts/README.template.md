@@ -1,11 +1,11 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
-  <img alt="Christopher Gonçalves · Tech enthusiast & Senior Software Engineer · Building tech that serves people · Creator of Perfect UI & ai-workbench" src="assets/hero-dark.svg" width="100%">
+  <img alt="Christopher Gonçalves · Tech enthusiast & Senior Software Engineer · Building tech that serves people · Creator of Perfect UI & openhora" src="assets/hero-dark.svg" width="100%">
 </picture>
 
 <a href="https://perfectui.dev"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/btn-perfectui-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/btn-perfectui-light.svg"><img alt="Perfect UI" src="assets/btn-perfectui-dark.svg" width="300"></picture></a>
-<a href="https://github.com/chrissgon/ai-workbench"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/btn-ai-workbench-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/btn-ai-workbench-light.svg"><img alt="ai-workbench" src="assets/btn-ai-workbench-dark.svg" width="300"></picture></a>
+<a href="https://openhora.dev"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/btn-openhora-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/btn-openhora-light.svg"><img alt="openhora" src="assets/btn-openhora-dark.svg" width="300"></picture></a>
 
 I build tech that serves people, and I talk about how I build it. Today I'm a senior software engineer with 6+ years shipping production frontends, and I still get as excited as I did on day one.
 
@@ -40,9 +40,9 @@ npm i @chrissgon/perfectui
 </details>
 
 <details open>
-<summary><b>ai-workbench</b>: skills, agents and workflows that let an AI build software end to end</summary>
+<summary><b>openhora</b>: an open, self-hosted workbench of skills, agents and workflows that let an AI build a digital solution</summary>
 
-Tested on strong and cheap models. [github.com/chrissgon/ai-workbench](https://github.com/chrissgon/ai-workbench)
+Recorded evidence, not a person's tick, decides which model runs a skill and what may run unattended. MIT licence, self-hosted, no telemetry. [openhora.dev](https://openhora.dev) · [github.com/chrissgon/openhora](https://github.com/chrissgon/openhora)
 </details>
 
 {{numbers}}
@@ -50,7 +50,7 @@ Tested on strong and cheap models. [github.com/chrissgon/ai-workbench](https://g
 ## What I write about
 
 - **Build to serve:** who each project is for, and the minimal web as a way to serve. Got a problem worth solving? [Tell me](#tell-me-a-problem).
-- **AI built in public:** ai-workbench from the inside, with what worked, what failed and real numbers. [The numbers](#what-i-build) are measured every Monday.
+- **AI built in public:** openhora from the inside, with what worked, what failed and real numbers. [The numbers](#what-i-build) are measured every Monday.
 - **Tech in conversation:** what I learn from people and events, and tech news with an opinion. [Pick the next topic](#pick-the-next-post).
 
 ## Latest posts
