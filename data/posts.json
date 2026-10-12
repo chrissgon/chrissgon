@@ -5,5 +5,33 @@
   "title": "Perfect UI 1.0 is out.",
   "url": "https://www.linkedin.com/feed/update/urn:li:share:7510677308874231808/",
   "image": "assets/posts/2026-09-29-perfect-ui-1-0.webp"
+ },
+ {
+  "date": "2026-10-05",
+  "lang": "PT",
+  "title": "Sabe aquele site que demora uma eternidade para abrir quando a internet está ruim? Foi pensando em quem passa por isso que eu fiz a Perfect UI.",
+  "url": "https://www.linkedin.com/feed/update/urn:li:share:7512851607915798528/",
+  "image": null
+ },
+ {
+  "date": "2026-10-05",
+  "lang": "PT",
+  "title": "Você já assinou um cheque em branco sem perceber?",
+  "url": "https://www.linkedin.com/feed/update/urn:li:share:7512976185128087552/",
+  "image": "assets/posts/2026-10-05-aprovacao-presa-ao-hash.png"
+ },
+ {
+  "date": "2026-10-07",
+  "lang": "EN",
+  "title": "I tried to read the comments on my own LinkedIn posts through the API. LinkedIn said no.",
+  "url": "https://www.linkedin.com/feed/update/urn:li:share:7513576369855971328/",
+  "image": null
+ },
+ {
+  "date": "2026-10-09",
+  "lang": "PT",
+  "title": "Sabe o que um modelo barato faz quando lê um texto com uma ordem escondida para a IA? Obedece.",
+  "url": "https://www.linkedin.com/feed/update/urn:li:share:7514301162427424769/",
+  "image": "assets/posts/2026-10-09-prompt-injection.png"
  }
 ]
