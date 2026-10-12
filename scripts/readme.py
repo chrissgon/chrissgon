@@ -126,7 +126,7 @@ def get_json(url, token=None):
 
 
 def measure(token=None):
-    gh = "https://api.github.com/repos/chrissgon/ai-workbench"
+    gh = "https://api.github.com/repos/chrissgon/openhora"
     month = get_json("https://api.npmjs.org/downloads/point/last-month/@chrissgon/perfectui")
     skills = [x for x in get_json(f"{gh}/contents/skills", token) if x["type"] == "dir"]
     agents = [x for x in get_json(f"{gh}/contents/agents", token) if x["name"].endswith(".md")]
@@ -252,15 +252,15 @@ def numbers_card(c, n):
             f'<text x="28" y="40" font-family="{MONO}" font-size="13" fill="{c["muted"]}">'
             f'<tspan fill="{c["accent"]}">agent&gt;</tspan> measured {esc(n["date"])} by scripts/readme.py</text>')
     cols = [(f'{n["npm_month"]:,}', "npm downloads, last 30 days", "@chrissgon/perfectui"),
-            (str(n["skills"]), "skills in ai-workbench", f'{n["agents"]} agents'),
-            (n["last_sha"], "last commit in ai-workbench", n["last_date"])]
+            (str(n["skills"]), "skills in openhora", f'{n["agents"]} agents'),
+            (n["last_sha"], "last commit in openhora", n["last_date"])]
     for i, (big, lab, sub) in enumerate(cols):
         x = 28 + i * 280
         body += (f'<text x="{x}" y="112" font-family="{SANS}" font-size="44" font-weight="800" letter-spacing="-1.3" fill="{c["text"]}">{esc(big)}</text>'
                  f'<text x="{x}" y="142" font-family="{MONO}" font-size="13" fill="{c["text"]}">{esc(lab)}</text>'
                  f'<text x="{x}" y="164" font-family="{MONO}" font-size="12" fill="{c["muted"]}">{esc(sub)}</text>')
     title = (f'Measured {n["date"]}: {n["npm_month"]} npm downloads of @chrissgon/perfectui in the last 30 days; '
-             f'{n["skills"]} skills and {n["agents"]} agents in ai-workbench; last commit {n["last_sha"]} on {n["last_date"]}.')
+             f'{n["skills"]} skills and {n["agents"]} agents in openhora; last commit {n["last_sha"]} on {n["last_date"]}.')
     return svg_doc(w, h, title, body)
 
 
@@ -356,7 +356,7 @@ def render():
         for mode, c in MODES.items():
             write(f"assets/numbers-{mode}.svg", fonts(numbers_card(c, n)))
         numbers_md = picture("numbers", f"Measured {n['date']}: {n['npm_month']} npm downloads of @chrissgon/perfectui in "
-                             f"the last 30 days; {n['skills']} skills and {n['agents']} agents in ai-workbench.")
+                             f"the last 30 days; {n['skills']} skills and {n['agents']} agents in openhora.")
     else:
         numbers_md = ""
     posts = sorted(load("posts.json"), key=lambda p: p["date"], reverse=True)[:3]
