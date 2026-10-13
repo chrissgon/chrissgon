@@ -19,13 +19,9 @@ This page isn't only about me. You can use it: pick what I write next, or tell m
 
 ## Pick the next post
 
-This week's slot is **Tech in conversation**. Pick the topic I write next: one pick per GitHub account, which you can change until the round closes on 2026-10-12.
+The next round opens on a Monday. Until then, the last result is below.
 
-<a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20A"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/pick-a-dark.svg?v=e19f895e"><source media="(prefers-color-scheme: light)" srcset="assets/pick-a-light.svg?v=0a1822b6"><img alt="Pick A: 600+ hours of live coding: what it taught me about explaining (0 so far)" src="assets/pick-a-dark.svg?v=e19f895e" width="100%"></picture></a>
-<a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20B"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/pick-b-dark.svg?v=fc6c518f"><source media="(prefers-color-scheme: light)" srcset="assets/pick-b-light.svg?v=6f6f5b49"><img alt="Pick B: What Erick Wendel's &quot;not seen, not remembered&quot; changed for me (2 so far)" src="assets/pick-b-dark.svg?v=fc6c518f" width="100%"></picture></a>
-<a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20C"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/pick-c-dark.svg?v=88d82bf3"><source media="(prefers-color-scheme: light)" srcset="assets/pick-c-light.svg?v=3dc50020"><img alt="Pick C: Working in English every day: what nobody warned me about (0 so far)" src="assets/pick-c-dark.svg?v=88d82bf3" width="100%"></picture></a>
-
-Last round you picked **LinkedIn's API won't let me read comments. What I did instead.**. I'm writing it now.
+Last round you picked **What Erick Wendel's "not seen, not remembered" changed for me**. I'm writing it now.
 
 ## Tell me a problem
 
@@ -67,7 +63,9 @@ Recorded evidence, not a person's tick, decides which model runs a skill and wha
 
 ## Latest posts
 
-<a href="https://www.linkedin.com/feed/update/urn:li:share:7510677308874231808/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/post-2026-09-29-dark.svg?v=5820761b"><source media="(prefers-color-scheme: light)" srcset="assets/post-2026-09-29-light.svg?v=2b2c0b3a"><img alt="2026-09-29: Perfect UI 1.0 is out." src="assets/post-2026-09-29-dark.svg?v=5820761b" width="32%"></picture></a>
+<a href="https://www.linkedin.com/feed/update/urn:li:share:7514301162427424769/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/post-2026-10-09-dark.svg?v=e545a274"><source media="(prefers-color-scheme: light)" srcset="assets/post-2026-10-09-light.svg?v=122caaae"><img alt="2026-10-09: Sabe o que um modelo barato faz quando lê um texto com uma ordem escondida para a IA? Obedece." src="assets/post-2026-10-09-dark.svg?v=e545a274" width="32%"></picture></a>
+<a href="https://www.linkedin.com/feed/update/urn:li:share:7513576369855971328/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/post-2026-10-07-dark.svg?v=504503a8"><source media="(prefers-color-scheme: light)" srcset="assets/post-2026-10-07-light.svg?v=8127e5f4"><img alt="2026-10-07: I tried to read the comments on my own LinkedIn posts through the API. LinkedIn said no." src="assets/post-2026-10-07-dark.svg?v=504503a8" width="32%"></picture></a>
+<a href="https://www.linkedin.com/feed/update/urn:li:share:7512851607915798528/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/post-2026-10-05-dark.svg?v=6ce17477"><source media="(prefers-color-scheme: light)" srcset="assets/post-2026-10-05-light.svg?v=adda1335"><img alt="2026-10-05: Sabe aquele site que demora uma eternidade para abrir quando a internet está ruim? Foi pensando em quem passa por isso que eu fiz a Perfect UI." src="assets/post-2026-10-05-dark.svg?v=6ce17477" width="32%"></picture></a>
 
 [chrissgon.dev](https://chrissgon.dev) · [LinkedIn](https://www.linkedin.com/in/chrissgon/) · [npm @chrissgon](https://www.npmjs.com/package/@chrissgon/perfectui) · [chrissgon.dev@gmail.com](mailto:chrissgon.dev@gmail.com)
 
