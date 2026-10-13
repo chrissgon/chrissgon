@@ -223,7 +223,8 @@ class Render(Base):
         self.assertIn('href="https://www.linkedin.com/feed/update/', out)
         for svg in self.tmp.glob("assets/post-*.svg"):
             text = svg.read_text()
-            self.assertIn('href="data:image/webp;base64,', text)
+            if "<image" in text:  # a post with no image gets a plain card
+                self.assertIn('href="data:image/webp;base64,', text)
             self.assertNotIn('href="http', text)
 
     def test_linked_pictures_stay_on_one_line(self):
