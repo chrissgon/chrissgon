@@ -363,7 +363,8 @@ def render():
                              f"the last 30 days; {n['skills']} skills and {n['agents']} agents in openhora.")
     else:
         numbers_md = ""
-    posts = sorted(load("posts.json"), key=lambda p: p["date"], reverse=True)[:3]
+    # only posts with an image: a card without one is an empty box
+    posts = sorted((p for p in load("posts.json") if p.get("image")), key=lambda p: p["date"], reverse=True)[:3]
     cards = []
     for p in posts:
         slug = f"post-{p['date']}"

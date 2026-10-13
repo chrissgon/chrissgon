@@ -234,6 +234,15 @@ class Render(Base):
                                                         "image": "assets/posts/x.png"})
         self.assertIn('href="data:image/png;base64,', card)
 
+    def test_latest_posts_leave_out_posts_with_no_image(self):
+        posts = readme.load("posts.json") + [{"date": "2099-01-01", "lang": "EN", "title": "no picture here",
+                                               "url": "https://www.linkedin.com/feed/update/y/", "image": None}]
+        readme.save("posts.json", posts)
+        readme.render()
+        out = (self.tmp / "README.md").read_text()
+        self.assertNotIn("no picture here", out)
+        self.assertFalse(list(self.tmp.glob("assets/post-2099-01-01-*.svg")))
+
     def test_linked_pictures_stay_on_one_line(self):
         readme.render()
         for line in (self.tmp / "README.md").read_text().splitlines():
