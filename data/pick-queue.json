@@ -1,10 +1,1 @@
-[
- {
-  "pillar": "Build to serve",
-  "options": {
-   "A": "Migrating Vue 2 to Vue 3: bundle -38%, TTI -42%, tests 7% to 87%",
-   "B": "Auditing the weight of three real sites: what a light-site auditor found",
-   "C": "My first computer at 6 or 7: how it shaped what I build today"
-  }
- }
-]
+[]

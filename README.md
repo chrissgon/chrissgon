@@ -19,7 +19,11 @@ This page isn't only about me. You can use it: pick what I write next, or tell m
 
 ## Pick the next post
 
-The next round opens on a Monday. Until then, the last result is below.
+This week's slot is **Build to serve**. Pick the topic I write next: one pick per GitHub account, which you can change until the round closes on 2026-10-20.
+
+<a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20A"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/pick-a-dark.svg?v=179b5a6b"><source media="(prefers-color-scheme: light)" srcset="assets/pick-a-light.svg?v=d64a80ed"><img alt="Pick A: Migrating Vue 2 to Vue 3: bundle -38%, TTI -42%, tests 7% to 87% (0 so far)" src="assets/pick-a-dark.svg?v=179b5a6b" width="100%"></picture></a>
+<a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20B"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/pick-b-dark.svg?v=3e08c8c1"><source media="(prefers-color-scheme: light)" srcset="assets/pick-b-light.svg?v=6496f1b6"><img alt="Pick B: Auditing the weight of three real sites: what a light-site auditor found (0 so far)" src="assets/pick-b-dark.svg?v=3e08c8c1" width="100%"></picture></a>
+<a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20C"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/pick-c-dark.svg?v=bee9b1a9"><source media="(prefers-color-scheme: light)" srcset="assets/pick-c-light.svg?v=296bc69b"><img alt="Pick C: My first computer at 6 or 7: how it shaped what I build today (0 so far)" src="assets/pick-c-dark.svg?v=bee9b1a9" width="100%"></picture></a>
 
 Last round you picked **What Erick Wendel's "not seen, not remembered" changed for me**. I'm writing it now.
 
