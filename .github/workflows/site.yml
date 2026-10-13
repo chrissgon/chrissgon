@@ -1,0 +1,30 @@
+name: site
+# Rebuilds chrissgon.dev when the "Pick the next post" round or the posts change, so that the site's HTML (what
+# agents, crawlers and "view as agent" read) carries them; visitors' browsers already refresh the round in the
+# page. Started by a push that changes those files (the runtime's commits) and by the readme workflow, whose own
+# commits, made with GITHUB_TOKEN, start no push workflow. The build hook URL is the secret NETLIFY_BUILD_HOOK;
+# the site's netlify.toml always builds when a build hook starts it.
+on:
+  push:
+    branches: [master]
+    paths: [data/pick.json, data/posts.json]
+  workflow_dispatch:
+permissions: {}
+concurrency:
+  group: site
+  cancel-in-progress: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Ask Netlify to rebuild chrissgon.dev
+        env:
+          HOOK: ${{ secrets.NETLIFY_BUILD_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "::notice::NETLIFY_BUILD_HOOK is not set: no rebuild"
+            exit 0
+          fi
+          curl -fsS -X POST -d '{}' "$HOOK?trigger_title=profile+round+or+posts+changed" -o /dev/null
+          echo "rebuild requested"
