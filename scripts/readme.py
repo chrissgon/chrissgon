@@ -274,6 +274,9 @@ def wrap(text, width):
     return lines + [cur] if cur else lines
 
 
+IMAGE_TYPES = {".webp": "image/webp", ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg"}
+
+
 def post_card(c, post):
     """A post as a card: the post's own image (a local file in assets/posts/) on top, date and title below."""
     w, img_h = 280, 350
@@ -283,8 +286,9 @@ def post_card(c, post):
             f'<rect x="1" y="1" width="{w-2}" height="{h-2}" rx="12" fill="{c["bg"]}"/>')
     if post.get("image"):
         data = base64.b64encode((ROOT / post["image"]).read_bytes()).decode()
+        mime = IMAGE_TYPES[Path(post["image"]).suffix.lower()]  # contracts/vote-data.md: .png, .webp or .jpg
         body += (f'<image clip-path="url(#r)" x="0" y="0" width="{w}" height="{img_h}" preserveAspectRatio="xMidYMid slice" '
-                 f'href="data:image/webp;base64,{data}"/>')
+                 f'href="data:{mime};base64,{data}"/>')
     else:
         body += f'<rect clip-path="url(#r)" x="0" y="0" width="{w}" height="{img_h}" fill="{c["surface"]}"/>'
     body += (f'<text x="16" y="{img_h + 28}" font-family="{MONO}" font-size="12" fill="{c["muted"]}">'

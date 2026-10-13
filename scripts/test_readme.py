@@ -224,8 +224,15 @@ class Render(Base):
         for svg in self.tmp.glob("assets/post-*.svg"):
             text = svg.read_text()
             if "<image" in text:  # a post with no image gets a plain card
-                self.assertIn('href="data:image/webp;base64,', text)
+                self.assertRegex(text, r'href="data:image/(webp|png|jpeg);base64,')
             self.assertNotIn('href="http', text)
+
+    def test_post_card_image_type_follows_the_file(self):
+        (self.tmp / "assets/posts/x.png").write_bytes(b"\x89PNG fake")
+        card = readme.post_card(readme.MODES["dark"], {"date": "2026-10-07", "lang": "EN", "title": "t",
+                                                        "url": "https://www.linkedin.com/feed/update/x/",
+                                                        "image": "assets/posts/x.png"})
+        self.assertIn('href="data:image/png;base64,', card)
 
     def test_linked_pictures_stay_on_one_line(self):
         readme.render()
