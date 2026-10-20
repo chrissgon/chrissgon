@@ -19,11 +19,7 @@ This page isn't only about me. You can use it: pick what I write next, or tell m
 
 ## Pick the next post
 
-This week's slot is **Build to serve**. Pick the topic I write next: one pick per GitHub account, which you can change until the round closes on 2026-10-20.
-
-<a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20A"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/pick-a-dark.svg?v=179b5a6b"><source media="(prefers-color-scheme: light)" srcset="assets/pick-a-light.svg?v=d64a80ed"><img alt="Pick A: Migrating Vue 2 to Vue 3: bundle -38%, TTI -42%, tests 7% to 87% (0 so far)" src="assets/pick-a-dark.svg?v=179b5a6b" width="100%"></picture></a>
-<a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20B"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/pick-b-dark.svg?v=3e08c8c1"><source media="(prefers-color-scheme: light)" srcset="assets/pick-b-light.svg?v=6496f1b6"><img alt="Pick B: Auditing the weight of three real sites: what a light-site auditor found (0 so far)" src="assets/pick-b-dark.svg?v=3e08c8c1" width="100%"></picture></a>
-<a href="https://github.com/chrissgon/chrissgon/issues/new?template=pick.yml&title=pick%3A%20C"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/pick-c-dark.svg?v=bee9b1a9"><source media="(prefers-color-scheme: light)" srcset="assets/pick-c-light.svg?v=296bc69b"><img alt="Pick C: My first computer at 6 or 7: how it shaped what I build today (0 so far)" src="assets/pick-c-dark.svg?v=bee9b1a9" width="100%"></picture></a>
+The next round opens on a Monday. Until then, the last result is below.
 
 Last round you picked **What Erick Wendel's "not seen, not remembered" changed for me**. I'm writing it now.
 
@@ -67,9 +63,9 @@ Recorded evidence, not a person's tick, decides which model runs a skill and wha
 
 ## Latest posts
 
-<a href="https://www.linkedin.com/feed/update/urn:li:share:7514301162427424769/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/post-2026-10-09-dark.svg?v=e545a274"><source media="(prefers-color-scheme: light)" srcset="assets/post-2026-10-09-light.svg?v=122caaae"><img alt="2026-10-09: Sabe o que um modelo barato faz quando lê um texto com uma ordem escondida para a IA? Obedece." src="assets/post-2026-10-09-dark.svg?v=e545a274" width="32%"></picture></a>
-<a href="https://www.linkedin.com/feed/update/urn:li:share:7512976185128087552/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/post-2026-10-05-dark.svg?v=c75bce1a"><source media="(prefers-color-scheme: light)" srcset="assets/post-2026-10-05-light.svg?v=2b940944"><img alt="2026-10-05: Você já assinou um cheque em branco sem perceber?" src="assets/post-2026-10-05-dark.svg?v=c75bce1a" width="32%"></picture></a>
-<a href="https://www.linkedin.com/feed/update/urn:li:share:7510677308874231808/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/post-2026-09-29-dark.svg?v=5820761b"><source media="(prefers-color-scheme: light)" srcset="assets/post-2026-09-29-light.svg?v=2b2c0b3a"><img alt="2026-09-29: Perfect UI 1.0 is out." src="assets/post-2026-09-29-dark.svg?v=5820761b" width="32%"></picture></a>
+<a href="https://www.linkedin.com/feed/update/urn:li:share:7516938878461816832/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/post-2026-10-16-dark.svg?v=ce080970"><source media="(prefers-color-scheme: light)" srcset="assets/post-2026-10-16-light.svg?v=4328e7db"><img alt="2026-10-16: I started teaching English to Chinese kids as a volunteer. Right away I hit a big problem: making the materials took forever." src="assets/post-2026-10-16-dark.svg?v=ce080970" width="32%"></picture></a>
+<a href="https://www.linkedin.com/feed/update/urn:li:share:7516113106067009536/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/post-2026-10-14-dark.svg?v=0c72c681"><source media="(prefers-color-scheme: light)" srcset="assets/post-2026-10-14-light.svg?v=45d3aeb3"><img alt="2026-10-14: Uma skill ajuda de verdade um modelo de IA, ou é só texto a mais no prompt? Fui medir." src="assets/post-2026-10-14-dark.svg?v=0c72c681" width="32%"></picture></a>
+<a href="https://www.linkedin.com/feed/update/urn:li:share:7515388319392837632/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/post-2026-10-12-dark.svg?v=71b69d8f"><source media="(prefers-color-scheme: light)" srcset="assets/post-2026-10-12-light.svg?v=f8d21089"><img alt="2026-10-12: Bootstrap made my sites look common and dated. That's where Perfect UI started." src="assets/post-2026-10-12-dark.svg?v=71b69d8f" width="32%"></picture></a>
 
 [chrissgon.dev](https://chrissgon.dev) · [LinkedIn](https://www.linkedin.com/in/chrissgon/) · [npm @chrissgon](https://www.npmjs.com/package/@chrissgon/perfectui) · [chrissgon.dev@gmail.com](mailto:chrissgon.dev@gmail.com)
 

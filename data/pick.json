@@ -1,5 +1,5 @@
 {
- "open": true,
+ "open": false,
  "round": "2026-10-13",
  "closes": "2026-10-20",
  "pillar": "Build to serve",
@@ -10,6 +10,22 @@
  },
  "picks": {},
  "history": [
+  {
+   "round": "2026-10-13",
+   "pillar": "Build to serve",
+   "options": {
+    "A": "Migrating Vue 2 to Vue 3: bundle -38%, TTI -42%, tests 7% to 87%",
+    "B": "Auditing the weight of three real sites: what a light-site auditor found",
+    "C": "My first computer at 6 or 7: how it shaped what I build today"
+   },
+   "counts": {
+    "A": 0,
+    "B": 0,
+    "C": 0
+   },
+   "winner": null,
+   "post_url": null
+  },
   {
    "round": "2026-10-05",
    "pillar": "Tech in conversation",
