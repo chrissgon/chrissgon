@@ -21,7 +21,7 @@ This page isn't only about me. You can use it: pick what I write next, or tell m
 
 The next round opens on a Monday. Until then, the last result is below.
 
-Last round you picked **What Erick Wendel's "not seen, not remembered" changed for me**. I'm writing it now.
+Last round you picked **What Erick Wendel's "not seen, not remembered" changed for me**. [I wrote it](https://www.linkedin.com/feed/update/urn:li:share:7519374594022109184/).
 
 ## Tell me a problem
 
@@ -50,9 +50,9 @@ Recorded evidence, not a person's tick, decides which model runs a skill and wha
 </details>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/numbers-dark.svg?v=472e7139">
-  <source media="(prefers-color-scheme: light)" srcset="assets/numbers-light.svg?v=3808649f">
-  <img alt="Measured 2026-10-18: 1270 npm downloads of @chrissgon/perfectui in the last 30 days; 48 skills and 4 agents in openhora." src="assets/numbers-dark.svg?v=472e7139" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/numbers-dark.svg?v=1663d53c">
+  <source media="(prefers-color-scheme: light)" srcset="assets/numbers-light.svg?v=2f72914c">
+  <img alt="Measured 2026-10-25: 1028 npm downloads of @chrissgon/perfectui in the last 30 days; 48 skills and 4 agents in openhora." src="assets/numbers-dark.svg?v=1663d53c" width="100%">
 </picture>
 
 ## What I write about
@@ -63,9 +63,9 @@ Recorded evidence, not a person's tick, decides which model runs a skill and wha
 
 ## Latest posts
 
+<a href="https://www.linkedin.com/feed/update/urn:li:share:7519374594022109184/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/post-2026-10-23-dark.svg?v=41aa7762"><source media="(prefers-color-scheme: light)" srcset="assets/post-2026-10-23-light.svg?v=8f654900"><img alt="2026-10-23: What Erick Wendel's &quot;not seen, not remembered&quot; changed for me" src="assets/post-2026-10-23-dark.svg?v=41aa7762" width="32%"></picture></a>
 <a href="https://www.linkedin.com/feed/update/urn:li:share:7516938878461816832/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/post-2026-10-16-dark.svg?v=ce080970"><source media="(prefers-color-scheme: light)" srcset="assets/post-2026-10-16-light.svg?v=4328e7db"><img alt="2026-10-16: I started teaching English to Chinese kids as a volunteer. Right away I hit a big problem: making the materials took forever." src="assets/post-2026-10-16-dark.svg?v=ce080970" width="32%"></picture></a>
 <a href="https://www.linkedin.com/feed/update/urn:li:share:7516113106067009536/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/post-2026-10-14-dark.svg?v=0c72c681"><source media="(prefers-color-scheme: light)" srcset="assets/post-2026-10-14-light.svg?v=45d3aeb3"><img alt="2026-10-14: Uma skill ajuda de verdade um modelo de IA, ou é só texto a mais no prompt? Fui medir." src="assets/post-2026-10-14-dark.svg?v=0c72c681" width="32%"></picture></a>
-<a href="https://www.linkedin.com/feed/update/urn:li:share:7515388319392837632/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/post-2026-10-12-dark.svg?v=71b69d8f"><source media="(prefers-color-scheme: light)" srcset="assets/post-2026-10-12-light.svg?v=f8d21089"><img alt="2026-10-12: Bootstrap made my sites look common and dated. That's where Perfect UI started." src="assets/post-2026-10-12-dark.svg?v=71b69d8f" width="32%"></picture></a>
 
 [chrissgon.dev](https://chrissgon.dev) · [LinkedIn](https://www.linkedin.com/in/chrissgon/) · [npm @chrissgon](https://www.npmjs.com/package/@chrissgon/perfectui) · [chrissgon.dev@gmail.com](mailto:chrissgon.dev@gmail.com)
 
