@@ -50,9 +50,9 @@ Recorded evidence, not a person's tick, decides which model runs a skill and wha
 </details>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/numbers-dark.svg?v=1663d53c">
-  <source media="(prefers-color-scheme: light)" srcset="assets/numbers-light.svg?v=2f72914c">
-  <img alt="Measured 2026-10-25: 1028 npm downloads of @chrissgon/perfectui in the last 30 days; 48 skills and 4 agents in openhora." src="assets/numbers-dark.svg?v=1663d53c" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/numbers-dark.svg?v=b1700714">
+  <source media="(prefers-color-scheme: light)" srcset="assets/numbers-light.svg?v=dfb2e4f2">
+  <img alt="Measured 2026-11-01: 479 npm downloads of @chrissgon/perfectui in the last 30 days; 48 skills and 4 agents in openhora." src="assets/numbers-dark.svg?v=b1700714" width="100%">
 </picture>
 
 ## What I write about
